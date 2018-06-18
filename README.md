@@ -50,3 +50,5 @@ Starts the test runner.
 4、位置圆角等不可用百分比
 5、样式名称要全写，比如，background要写成background-color
 6、display可能不支持
+
+最近比较忙，晚点抽空弄一个官方的
