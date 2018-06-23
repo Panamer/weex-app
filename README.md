@@ -51,4 +51,6 @@ Starts the test runner.
 5、样式名称要全写，比如，background要写成background-color
 6、display可能不支持
 
+官方提供的访问静态资源方法是可以的
+
 最近比较忙，晚点抽空弄一个官方的
