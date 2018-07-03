@@ -2,8 +2,6 @@
 
 ### npm start
 
-Starts the development server for you to preview your weex page on browser.
-You can also scan the QR code using weex playground to preview weex page on native.
 
 ### npm run dev
 
