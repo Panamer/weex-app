@@ -14,18 +14,11 @@ Starts the development server and loads your app in an iOS simulator.
 
 ### npm run android
 
-(Requires Android build tools)
-Starts the development server and loads your app on a connected Android device or emulator.
-
 ### npm run pack:ios
 
-(Mac only, requires Xcode)
-Packaging ios project into ipa package.
+只能在Xcode上
 
 ### npm run pack:android
-
-(Requires Android build tools)
-Packaging android project into apk package.
 
 ### npm run pack:web
 
@@ -40,16 +33,20 @@ Starts the test runner.
 
 在build的时候css样式问题：
 1、justify 不支持 text-align (支持: `left`|`center`|`right`)
+
 2、color 不要写单词
+
 3、不必写的样式(默认样式)
  flex-direction: column
  flex-wrap: nowrap
  position: relative
+ 
 4、位置圆角等不可用百分比
+
 5、样式名称要全写，比如，background要写成background-color
+
 6、display可能不支持
 
 官方提供的访问静态资源方法是可以的
 
-最近比较忙，晚点抽空弄一个官方的
 分享朋友圈只能原生支持
