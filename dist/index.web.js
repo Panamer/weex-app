@@ -8753,7 +8753,8 @@ _weexVueRender2.default.init(_vue2.default);
 /* weex initialized here, please do not move this line */
 var router = __webpack_require__(10);
 var App = __webpack_require__(20);
-/* eslint-disable no-new */
+// eslint-disable-next-line
+/* eslint-disable */
 new _vue2.default(_vue2.default.util.extend({ el: '#root', router: router }, App));
 router.push('/');
 
@@ -22692,6 +22693,28 @@ exports.default = {
       this.$router.push({
         name: 'HelloWorld'
       });
+    },
+    get_img_path: function get_img_path(img_name) {
+      // 获取图片在三端上不同的路径
+      // e.g. 图片文件名是 test.jpg, 转换得到的图片地址为
+      // - H5      : http: //localhost:1337/src/images/test.jpg
+      // - Android : local:///test
+      // - iOS     : ../images/test.jpg
+      var platform = weex.config.env.platform;
+      this.platform = weex.config.env.platform;
+      var img_path = '';
+
+      if (platform == 'Web') {
+        img_path = 'http://10.134.190.11:8081/images/' + img_name;
+      } else if (platform == 'android') {
+        // android 不需要后缀
+        img_name = img_name.substr(0, img_name.lastIndexOf('.'));
+        img_path = 'local:///' + img_name;
+      } else {
+        img_path = 'local://' + img_name;
+      }
+      this.img_path = img_path;
+      return img_path;
     }
   }
 };
@@ -22709,8 +22732,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('figure', {
     staticClass: "logo weex-el weex-image",
     attrs: {
-      "src": _vm.logo,
-      "data-img-src": _vm.logo,
+      "src": _vm.get_img_path('03.jpg'),
+      "data-img-src": _vm.get_img_path('03.jpg'),
       "weex-type": "image"
     }
   }), _vm._v(" "), _c('p', {
@@ -22718,7 +22741,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "weex-type": "text"
     }
-  }, [_vm._v("./images/03.jpg PC可以显示 虚拟机不能显示")]), _vm._v(" "), _c('p', {
+  }, [_vm._v(_vm._s(_vm.img_path))]), _vm._v(" "), _c('p', {
     staticClass: "greeting weex-el weex-text",
     attrs: {
       "weex-type": "text",

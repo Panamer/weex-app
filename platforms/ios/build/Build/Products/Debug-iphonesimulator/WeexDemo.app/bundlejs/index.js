@@ -2668,7 +2668,7 @@ exports.default = {
         });
       } else {
         navigator.push({
-          url: 'http://10.134.182.130:8081/web/preview.html?page=index.js',
+          url: 'http://weex.apache.org/cn/references/modules/navigator.html',
           animated: 'true'
         }, function (event) {
           // modal.toast({ message: 'callback ok: ' + event })
