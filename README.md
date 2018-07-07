@@ -32,6 +32,7 @@ Starts the test runner.
 用weex-toolkit结合vue-router开发weex单页app、
 
 在build的时候css样式问题：
+
 1、justify 不支持 text-align (支持: `left`|`center`|`right`)
 
 2、color 不要写单词
